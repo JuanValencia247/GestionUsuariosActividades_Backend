@@ -1,0 +1,12 @@
+# Archivos sensibles
+.env
+
+# Dependencias
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Archivos del sistema
+.DS_Store
