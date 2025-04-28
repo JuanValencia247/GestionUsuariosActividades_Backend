@@ -3,6 +3,7 @@ const Activity = require('../models/Activity');
 exports.createActivity = async (req, res) => {
   const activity = await Activity.create(req.body);
   return res.status(200).json({
+    status: 'Success', 
     msg: 'Guardado Correctamente',
     activity
   });
@@ -11,6 +12,7 @@ exports.createActivity = async (req, res) => {
 exports.getActivitiesByUser = async (req, res) => {
   const activities = await Activity.find({ userId: req.params.userId });
   return res.status(200).json({
+    status: 'Success', 
     msg: 'Guardado Correctamente',
     activities
   });
@@ -28,6 +30,7 @@ exports.updateActivity = async (req, res) => {
       { new: true }
     );
     return res.status(200).json({
+      status: 'Success', 
       msg: 'Actualizado Correctamente',
       updated
     })
@@ -41,6 +44,7 @@ exports.deleteActivity = async (req, res) => {
   try {
     await Activity.findByIdAndDelete(req.params.id);
     return res.status(200).json({
+      status: 'Success', 
       msg: 'Eliminado Correctamente',
 
     })
@@ -63,6 +67,7 @@ exports.getWeeklySummary = async (req, res) => {
   const average = count ? total / count : 0;
 
   return res.status(200).json({
+    status: 'Success', 
     msg: 'Obtenido Correctamente',
     total,
     count,
